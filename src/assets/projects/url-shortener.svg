@@ -1,0 +1,8 @@
+<svg width="800" height="480" viewBox="0 0 800 480" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="480" rx="40" fill="#27272a"/>
+  <rect x="40" y="40" width="720" height="120" rx="24" fill="#3f3f46"/>
+  <rect x="40" y="200" width="660" height="30" rx="15" fill="#8b5cf6"/>
+  <rect x="40" y="250" width="520" height="22" rx="11" fill="#71717a"/>
+  <rect x="40" y="290" width="400" height="22" rx="11" fill="#71717a"/>
+  <text x="50" y="110" fill="#fff" font-family="Inter, sans-serif" font-size="32" font-weight="700">URL Shortener</text>
+</svg>

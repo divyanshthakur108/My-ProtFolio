@@ -1,0 +1,8 @@
+<svg width="800" height="480" viewBox="0 0 800 480" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <rect width="800" height="480" rx="40" fill="#27272a"/>
+  <rect x="40" y="40" width="720" height="120" rx="24" fill="#3f3f46"/>
+  <rect x="40" y="220" width="640" height="30" rx="15" fill="#d946ef"/>
+  <rect x="40" y="266" width="500" height="22" rx="11" fill="#71717a"/>
+  <rect x="40" y="306" width="380" height="22" rx="11" fill="#71717a"/>
+  <text x="50" y="110" fill="#fff" font-family="Inter, sans-serif" font-size="32" font-weight="700">E-Commerce Site</text>
+</svg>
