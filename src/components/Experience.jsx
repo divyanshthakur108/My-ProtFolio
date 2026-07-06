@@ -34,7 +34,7 @@ const Experience = () => {
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      className="w-full bg-[#1a1a1a] px-6 py-24 sm:px-8"
+      className="w-full bg-dark-100 px-6 py-24 sm:px-8"
     >
       <div className="mx-auto max-w-6xl">
         <motion.div
@@ -59,8 +59,8 @@ const Experience = () => {
 
         <div className="grid grid-cols-[80px_minmax(0,1fr)] gap-x-10 gap-y-12">
           <div className="relative">
-            <div className="absolute left-1/2 top-0 h-full w-[3px] -translate-x-1/2 bg-[#7C3AED]" />
-            <div className="relative flex flex-col items-center gap-[110px] pt-6">
+            <div className="absolute left-1/2 top-0 h-full w-0.75 -translate-x-1/2 bg-[#7C3AED]" />
+            <div className="relative flex flex-col items-center gap-27.5 pt-6">
               {experienceData.map((_, index) => (
                 <motion.div
                   key={index}
@@ -68,15 +68,15 @@ const Experience = () => {
                   whileInView={{ scale: 1 }}
                   viewport={{ once: true, amount: 0.4 }}
                   transition={{ duration: 0.4, delay: index * 0.15 }}
-                  className="flex h-[56px] w-[56px] items-center justify-center rounded-full bg-[#2a2a2a] shadow-2xl"
+                  className="flex h-14 w-14 items-center justify-center rounded-full bg-[#2a2a2a] shadow-2xl"
                 >
-                  <div className="h-[18px] w-[18px] rounded-full bg-[#8B5CF6] shadow-[0_0_18px_rgba(139,92,246,0.35)]" />
+                  <div className="h-4.5 w-4.5 rounded-full bg-[#8B5CF6] shadow-[0_0_18px_rgba(139,92,246,0.35)]" />
                 </motion.div>
               ))}
             </div>
           </div>
 
-          <div className="space-y-[110px]">
+          <div className="space-y-27.5">
             {experienceData.map((item, index) => (
               <motion.article
                 key={item.title}
