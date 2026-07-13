@@ -26,7 +26,7 @@ const About = () => {
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      className="w-full bg-[#1a1a1a] px-6 py-24 sm:px-8 lg:px-10"
+      className="w-full bg-dark-100 px-6 py-24 sm:px-8 lg:px-10"
     >
       <div className="mx-auto flex max-w-7xl flex-col items-center text-center">
         <motion.div
@@ -53,11 +53,11 @@ const About = () => {
             transition={{ duration: 0.8, ease: "easeOut" }}
             className="w-full lg:w-[45%]"
           >
-            <div className="group overflow-hidden rounded-[2rem] shadow-2xl shadow-black/40 transition-transform duration-500 hover:scale-[1.02]">
+            <div className="group overflow-hidden rounded-4xl shadow-2xl shadow-black/40 transition-transform duration-500 hover:scale-[1.02]">
               <img
                 src={profileImage}
                 alt="Profile"
-                className="w-full rounded-[2rem] object-cover"
+                className="w-full rounded-4xl object-cover"
               />
             </div>
           </motion.div>
@@ -74,7 +74,7 @@ const About = () => {
             </h3>
             <div className="mt-6 space-y-6 text-white/80 text-base leading-8 sm:text-lg">
               <p>
-                I&apos;m a passionate Full Stack MERN Developer focused on
+                I&apos;m A passionate Full Stack MERN Developer focused on
                 building modern, responsive and scalable web applications using
                 React, Node.js, Express.js and MongoDB.
               </p>
