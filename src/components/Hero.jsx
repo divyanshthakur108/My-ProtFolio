@@ -62,7 +62,7 @@ const Hero = () => {
   const [menuOpen, setMenuOpen] = useState(false);
 
   return (
-    <section className="min-h-screen bg-gradient-to-br from-[#1a1a1a] via-[#242424] to-[#2d2d2d] text-white">
+    <section className="min-h-screen bg-linear-to-br from-dark-100 via-[#242424] to-dark-300 text-white">
       <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-black/20 backdrop-blur-xl">
         <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 sm:px-8 lg:px-10">
           <a
