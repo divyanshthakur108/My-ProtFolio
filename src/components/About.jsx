@@ -18,6 +18,7 @@ const cards = [
   },
 ];
 
+
 const About = () => {
   return (
     <motion.section
