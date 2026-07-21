@@ -20,6 +20,127 @@ html {
   --color-blue: #3b82f6;
 }
 
+/* ─── Typing Cursor ─────────────────────────────────── */
+.typing-cursor {
+  display: inline-block;
+  margin-left: 0.1rem;
+  animation: blink 1s step-end infinite;
+  color: #8b5cf6;
+  font-weight: 300;
+}
+
+@keyframes blink {
+  0%,
+  100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+/* ─── Profile Image — Float ─────────────────────────── */
+.profile-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
+}
+
+/* ─── Profile Image — Rotating Gradient Border ──────── */
+.rotating-gradient {
+  animation: rotate-gradient 8s linear infinite;
+}
+
+@keyframes rotate-gradient {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ─── Hero Background Grid ──────────────────────────── */
+.hero-bg-grid {
+  background-image: linear-gradient(
+      rgba(139, 92, 246, 0.03) 1px,
+      transparent 1px
+    ),
+    linear-gradient(90deg, rgba(139, 92, 246, 0.03) 1px, transparent 1px);
+  background-size: 60px 60px;
+  mask-image: radial-gradient(
+    ellipse 80% 60% at 50% 50%,
+    black 30%,
+    transparent 80%
+  );
+}
+
+/* ─── Scroll Indicator ──────────────────────────────── */
+.scroll-indicator {
+  animation: scroll-fade 2.5s ease-in-out infinite;
+}
+
+@keyframes scroll-fade {
+  0%,
+  100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+/* ─── Secondary Button Animated Border ──────────────── */
+.hero-btn-secondary {
+  position: relative;
+}
+
+.hero-btn-secondary::before {
+  content: "";
+  position: absolute;
+  inset: -1px;
+  border-radius: 0.75rem;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    rgba(139, 92, 246, 0.4),
+    rgba(236, 72, 153, 0.2),
+    rgba(139, 92, 246, 0.4)
+  );
+  background-size: 200% 200%;
+  animation: border-shimmer 4s ease-in-out infinite;
+  mask:
+    linear-gradient(#fff 0 0) content-box,
+    linear-gradient(#fff 0 0);
+  mask-composite: exclude;
+  pointer-events: none;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.hero-btn-secondary:hover::before {
+  opacity: 1;
+}
+
+@keyframes border-shimmer {
+  0%,
+  100% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+}
+
+/* ─── Legacy styles kept for other components ────────── */
 .typewriter {
   overflow: hidden;
   border-right: 0.15em solid #8b5cf6;
@@ -46,23 +167,5 @@ html {
   }
   50% {
     border-color: #8b5cf6;
-  }
-}
-
-.typing-cursor {
-  display: inline-block;
-  margin-left: 0.2rem;
-  width: 0.8rem;
-  animation: blink 1s step-end infinite;
-  color: #8b5cf6;
-}
-
-@keyframes blink {
-  0%,
-  100% {
-    opacity: 1;
-  }
-  50% {
-    opacity: 0;
   }
 }

@@ -1,120 +1,136 @@
-import React from "react";
 import { motion } from "framer-motion";
-import { Lightbulb, Brush } from "lucide-react";
-import profileImage from "../assets/profile.avif";
 
 const cards = [
   {
-    icon: Lightbulb,
-    title: "Innovative",
-    description:
-      "I enjoy building creative solutions and solving challenging problems using modern web technologies.",
+    emoji: "💼",
+    title: "Experience",
+    description: "Building Full Stack MERN Applications",
   },
   {
-    icon: Brush,
-    title: "Design Oriented",
-    description:
-      "I focus on creating clean, responsive and user-friendly interfaces with excellent user experience.",
+    emoji: "🚀",
+    title: "Projects",
+    description: "10+ Real-world Projects",
+  },
+  {
+    emoji: "📚",
+    title: "Learning",
+    description: "Always Learning New Technologies",
+  },
+  {
+    emoji: "🎯",
+    title: "Goal",
+    description: "Become a Professional Software Engineer",
   },
 ];
 
+const cardVariants = {
+  hidden: { opacity: 0, y: 30 },
+  visible: (i) => ({
+    opacity: 1,
+    y: 0,
+    transition: { duration: 0.5, delay: i * 0.12, ease: "easeOut" },
+  }),
+};
 
 const About = () => {
   return (
     <motion.section
       id="about"
+      aria-label="About me"
       initial={{ opacity: 0 }}
       whileInView={{ opacity: 1 }}
-      viewport={{ once: true, amount: 0.2 }}
+      viewport={{ once: true, amount: 0.15 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      className="w-full bg-dark-100 px-6 py-24 sm:px-8 lg:px-10"
+      className="relative w-full overflow-hidden bg-dark-100 px-6 py-28 sm:px-8 lg:px-10"
     >
-      <div className="mx-auto flex max-w-7xl flex-col items-center text-center">
+      {/* Background accent glow */}
+      <div className="pointer-events-none absolute top-0 left-1/2 h-[500px] w-[700px] -translate-x-1/2 rounded-full bg-purple-600/6 blur-[140px]" />
+
+      <div className="relative mx-auto max-w-[1200px]">
+        {/* ── Section Header ───────────────────────────── */}
         <motion.div
           initial={{ opacity: 0, y: -30 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, amount: 0.2 }}
+          viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="mb-12 max-w-3xl"
+          className="mb-16 text-center"
         >
-          <h2 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
-            <span className="text-white">About</span>{" "}
-            <span className="text-purple-500">Me</span>
+          <h2 className="text-4xl font-bold tracking-tight sm:text-5xl">
+            <span className="text-white">About </span>
+            <span className="bg-gradient-to-r from-purple-400 to-violet-500 bg-clip-text text-transparent">
+              Me
+            </span>
           </h2>
-          <p className="mt-4 text-base text-white/60 sm:text-lg">
-            Get to know more about my background and passion
+          <p className="mt-4 text-base text-white/50 sm:text-lg">
+            Get to know more about my background and passion.
           </p>
         </motion.div>
 
-        <div className="flex w-full flex-col items-center gap-14 lg:flex-row lg:items-start lg:gap-10">
+        {/* ── Two-Column Layout ────────────────────────── */}
+        <div className="flex flex-col gap-14 lg:flex-row lg:items-start lg:gap-16">
+          {/* ── Left: My Journey ──────────────────────── */}
           <motion.div
-            initial={{ opacity: 0, x: -60 }}
+            initial={{ opacity: 0, x: -40 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="w-full lg:w-[45%]"
+            viewport={{ once: true, amount: 0.2 }}
+            transition={{ duration: 0.7, ease: "easeOut" }}
+            className="w-full lg:w-1/2"
           >
-            <div className="group overflow-hidden rounded-4xl shadow-2xl shadow-black/40 transition-transform duration-500 hover:scale-[1.02]">
-              <img
-                src={profileImage}
-                alt="Profile"
-                className="w-full rounded-4xl object-cover"
-              />
-            </div>
-          </motion.div>
-
-          <motion.div
-            initial={{ opacity: 0, x: 60 }}
-            whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.3 }}
-            transition={{ duration: 0.8, ease: "easeOut" }}
-            className="w-full lg:w-[55%]"
-          >
-            <h3 className="text-3xl font-bold text-white sm:text-4xl">
-              My Journey
+            <h3 className="text-2xl font-bold text-white sm:text-3xl">
+              My{" "}
+              <span className="text-purple-400">Journey</span>
             </h3>
-            <div className="mt-6 space-y-6 text-white/80 text-base leading-8 sm:text-lg">
+
+            <div className="mt-6 space-y-5 text-base leading-relaxed text-white/65 sm:text-lg">
               <p>
-                I&apos;m A passionate Full Stack MERN Developer focused on
+                I&apos;m a passionate Full Stack MERN Developer focused on
                 building modern, responsive and scalable web applications using
                 React, Node.js, Express.js and MongoDB.
               </p>
               <p>
                 I enjoy solving real-world problems, learning new technologies
-                and creating beautiful user experiences. My goal is to become a
-                professional software engineer and contribute to impactful
-                projects.
+                and creating beautiful user experiences. I&apos;m constantly
+                pushing myself to grow as a developer and stay current with
+                industry best practices.
+              </p>
+              <p>
+                My goal is to become a professional software engineer and
+                contribute to impactful projects that make a difference.
               </p>
             </div>
-
-            <div className="mt-10 grid gap-6 sm:grid-cols-2">
-              {cards.map((card) => {
-                const Icon = card.icon;
-                return (
-                  <motion.div
-                    key={card.title}
-                    initial={{ opacity: 0, y: 30 }}
-                    whileInView={{ opacity: 1, y: 0 }}
-                    viewport={{ once: true, amount: 0.35 }}
-                    transition={{ duration: 0.5, ease: "easeOut" }}
-                    whileHover={{
-                      y: -8,
-                      boxShadow: "0 25px 45px rgba(139,92,246,0.18)",
-                    }}
-                    className="rounded-2xl bg-[#262626] p-8 transition duration-300"
-                  >
-                    <div className="inline-flex h-14 w-14 items-center justify-center rounded-3xl bg-purple-500/10 text-purple-300">
-                      <Icon size={28} />
-                    </div>
-                    <h4 className="mt-6 text-xl font-semibold text-white">
-                      {card.title}
-                    </h4>
-                    <p className="mt-3 text-white/70">{card.description}</p>
-                  </motion.div>
-                );
-              })}
-            </div>
           </motion.div>
+
+          {/* ── Right: 2×2 Cards Grid ────────────────── */}
+          <div className="grid w-full grid-cols-1 gap-5 sm:grid-cols-2 lg:w-1/2">
+            {cards.map((card, i) => (
+              <motion.div
+                key={card.title}
+                custom={i}
+                variants={cardVariants}
+                initial="hidden"
+                whileInView="visible"
+                viewport={{ once: true, amount: 0.3 }}
+                whileHover={{
+                  y: -6,
+                  boxShadow: "0 20px 40px rgba(139,92,246,0.15)",
+                }}
+                className="group rounded-2xl border border-white/5 bg-white/[0.03] p-7 backdrop-blur-md transition-all duration-300 hover:border-purple-500/30 hover:bg-white/[0.06]"
+              >
+                <span
+                  className="flex h-12 w-12 items-center justify-center rounded-xl bg-purple-500/10 text-2xl"
+                  aria-hidden="true"
+                >
+                  {card.emoji}
+                </span>
+                <h4 className="mt-5 text-lg font-semibold text-white">
+                  {card.title}
+                </h4>
+                <p className="mt-2 text-sm leading-relaxed text-white/50">
+                  {card.description}
+                </p>
+              </motion.div>
+            ))}
+          </div>
         </div>
       </div>
     </motion.section>

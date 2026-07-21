@@ -1,192 +1,122 @@
-import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
-import { FiMenu, FiX } from "react-icons/fi";
-import profileImage from "../assets/profile.avif";
-
-const navItems = [
-  "Home",
-  "About",
-  "Skills",
-  "Projects",
-  "Experience",
-  "Contact",
-];
-
-const phrases = [
-  "Full Stack Developer",
-  "MERN Stack Developer",
-  "React Developer",
-  "Frontend Developer",
-];
-
-const AnimatedTyping = () => {
-  const [text, setText] = useState("");
-  const [index, setIndex] = useState(0);
-  const [isDeleting, setIsDeleting] = useState(false);
-  const [speed, setSpeed] = useState(80);
-
-  useEffect(() => {
-    const current = phrases[index % phrases.length];
-    const timeout = setTimeout(() => {
-      setText((prev) =>
-        isDeleting
-          ? current.slice(0, prev.length - 1)
-          : current.slice(0, prev.length + 1),
-      );
-
-      if (!isDeleting && text === current) {
-        setIsDeleting(true);
-        setSpeed(1200);
-      } else if (isDeleting && text === "") {
-        setIsDeleting(false);
-        setIndex((prev) => prev + 1);
-        setSpeed(80);
-      } else {
-        setSpeed(isDeleting ? 40 : 80);
-      }
-    }, speed);
-
-    return () => clearTimeout(timeout);
-  }, [text, isDeleting, index, speed]);
-
-  return (
-    <p className="mt-8 text-3xl font-semibold leading-tight text-white sm:text-4xl lg:text-5xl">
-      {text}
-      <span className="typing-cursor">|</span>
-    </p>
-  );
-};
+import ProfileImage from "./hero/ProfileImage";
+import TypingText from "./hero/TypingText";
+import HeroButtons from "./hero/HeroButtons";
+import SocialLinks from "./hero/SocialLinks";
 
 const Hero = () => {
-  const [activeItem, setActiveItem] = useState("Home");
-  const [menuOpen, setMenuOpen] = useState(false);
-
   return (
-    <section className="min-h-screen bg-linear-to-br from-dark-100 via-[#242424] to-0
-    dark-300 text-white">
-      <header className="fixed inset-x-0 top-0 z-50 border-b border-white/10 bg-black/20 backdrop-blur-xl">
-        <div className="mx-auto flex max-w-7xl items-center justify-between px-6 py-4 sm:px-8 lg:px-10">
-          <a
-            href="/#home"
-            className="flex flex-col items-start gap-1 text-lg font-semibold sm:text-xl"
-          >
-            <span className="text-white">Divyansh</span>
-            <span className="text-purple-500">Thakur</span>
-            <span className="h-2 w-2 rounded-full bg-purple-500" />
-          </a>
+    <section
+      id="home"
+      aria-label="Hero section"
+      className="relative min-h-screen overflow-hidden bg-dark-100"
+    >
+      {/* ── Premium Background ─────────────────────────────── */}
+      {/* Base radial gradient */}
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_80%_60%_at_50%_-20%,rgba(139,92,246,.25),transparent_70%)]" />
 
-          <nav className="hidden items-center gap-8 md:flex">
-            {navItems.map((item) => (
-              <a
-                key={item}
-                href={`/#${item.toLowerCase()}`}
-                onClick={() => setActiveItem(item)}
-                className={`transition duration-300 ${
-                  activeItem === item
-                    ? "text-purple-500"
-                    : "text-white/70 hover:text-white"
-                }`}
-              >
-                {item}
-              </a>
-            ))}
-          </nav>
+      {/* Secondary glow — bottom right */}
+      <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_80%_100%,rgba(139,92,246,.12),transparent_60%)]" />
 
-          <button
-            type="button"
-            className="inline-flex items-center justify-center rounded-full border border-white/10 bg-white/5 p-2 text-white transition duration-300 hover:bg-white/10 md:hidden"
-            onClick={() => setMenuOpen((prev) => !prev)}
-            aria-label="Toggle mobile menu"
-          >
-            {menuOpen ? <FiX size={20} /> : <FiMenu size={20} />}
-          </button>
-        </div>
+      {/* Floating blurred blobs */}
+      <div className="pointer-events-none absolute top-[15%] left-[10%] h-[400px] w-[400px] rounded-full bg-purple-600/8 blur-[120px]" />
+      <div className="pointer-events-none absolute right-[5%] bottom-[20%] h-[350px] w-[350px] rounded-full bg-violet-500/6 blur-[100px]" />
+      <div className="pointer-events-none absolute top-[60%] left-[50%] h-[300px] w-[300px] -translate-x-1/2 rounded-full bg-pink-500/5 blur-[110px]" />
 
-        {menuOpen && (
-          <div className="border-t border-white/10 bg-[#111111]/95 md:hidden">
-            <div className="mx-auto flex max-w-7xl flex-col gap-2 px-6 py-4 sm:px-8">
-              {navItems.map((item) => (
-                <a
-                  key={item}
-                  href={`/#${item.toLowerCase()}`}
-                  onClick={() => {
-                    setActiveItem(item);
-                    setMenuOpen(false);
-                  }}
-                  className={`rounded-2xl px-4 py-3 text-base transition duration-300 ${
-                    activeItem === item
-                      ? "bg-purple-500/10 text-purple-500"
-                      : "text-white/80 hover:bg-white/5 hover:text-white"
-                  }`}
-                >
-                  {item}
-                </a>
-              ))}
-            </div>
-          </div>
-        )}
-      </header>
+      {/* Subtle grid pattern */}
+      <div className="hero-bg-grid pointer-events-none absolute inset-0" />
 
-      <motion.div
-        id="home"
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.8, ease: "easeOut" }}
-        className="relative flex min-h-screen items-center px-6 pt-28 pb-12 sm:px-8 lg:px-10"
-      >
-        <div className="mx-auto flex w-full max-w-7xl flex-col-reverse items-center gap-16 lg:flex-row lg:items-center">
+      {/* Glass top highlight */}
+      <div className="pointer-events-none absolute inset-x-0 top-0 h-px bg-gradient-to-r from-transparent via-purple-500/30 to-transparent" />
+
+      {/* ── Hero Content ───────────────────────────────────── */}
+      <div className="relative z-10 flex min-h-screen items-center px-6 pt-24 pb-20 sm:px-8 lg:px-10">
+        <div className="mx-auto flex w-full max-w-7xl flex-col items-center gap-12 lg:flex-row lg:items-center lg:gap-20">
+          {/* ── Text Column ──────────────────────────────── */}
           <motion.div
-            initial={{ opacity: 0, x: -60 }}
+            initial={{ opacity: 0, x: -50 }}
             animate={{ opacity: 1, x: 0 }}
-            transition={{ duration: 0.9, ease: "easeOut" }}
-            className="w-full max-w-2xl text-center lg:text-left"
+            transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
+            className="order-2 w-full max-w-2xl text-center lg:order-1 lg:text-left"
           >
-            <h1 className="text-5xl font-black tracking-tight text-white sm:text-6xl lg:text-7xl">
-              Hi, I&apos;m{" "}
-              <span className="text-purple-500">Divyansh Thakur</span>
-            </h1>
+            {/* Greeting */}
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.2 }}
+              className="mb-3 text-lg font-medium tracking-wide text-purple-400/80 sm:text-xl"
+            >
+              Hi, I&apos;m
+            </motion.p>
 
-            <AnimatedTyping />
+            {/* Name */}
+            <motion.h1
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.25 }}
+              className="text-4xl font-black tracking-tight sm:text-5xl lg:text-7xl"
+            >
+              <span className="bg-gradient-to-r from-purple-400 via-violet-400 to-purple-500 bg-clip-text text-transparent">
+                Divyansh Thakur
+              </span>
+            </motion.h1>
 
-            <p className="mt-8 max-w-xl text-base text-white/70 sm:text-lg">
+            {/* Typing Animation */}
+            <TypingText />
+
+            {/* Description */}
+            <motion.p
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.5, delay: 0.5 }}
+              className="mt-6 max-w-xl text-base leading-relaxed text-white/55 sm:text-lg lg:max-w-lg"
+            >
               I create stunning web experiences with modern technologies and
-              innovative design.
-            </p>
+              innovative design. Passionate about building scalable,
+              user-focused applications.
+            </motion.p>
 
-            <div className="mt-10 flex flex-col gap-4 sm:flex-row">
-              <a
-                href="/#projects"
-                className="inline-flex items-center justify-center rounded-xl bg-purple-500 px-8 py-3 text-base font-semibold text-white shadow-lg shadow-purple-500/20 transition duration-300 hover:-translate-y-0.5 hover:scale-[1.02] hover:bg-purple-600"
-              >
-                View Work
-              </a>
-              <a
-                href="/#contact"
-                className="inline-flex items-center justify-center rounded-xl border border-purple-500 bg-transparent px-8 py-3 text-base font-semibold text-white transition duration-300 hover:-translate-y-0.5 hover:scale-[1.02] hover:bg-purple-500/20"
-              >
-                Contact Me
-              </a>
-            </div>
+            {/* Buttons */}
+            <HeroButtons />
+
+            {/* Social Links */}
+            <SocialLinks />
           </motion.div>
 
-          <motion.div
-            initial={{ opacity: 0, x: 60 }}
-            animate={{ opacity: 1, x: 0, y: [0, -12, 0] }}
-            transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-            className="flex w-full justify-center lg:justify-end"
-          >
-            <div className="relative">
-              <div className="absolute -inset-3 rounded-full bg-gradient-to-br from-purple-500/40 via-transparent to-pink-500/40 blur-3xl" />
-              <div className="relative overflow-hidden rounded-full border border-white/10 bg-white p-4 shadow-2xl shadow-black/30 sm:p-6 lg:p-8">
-                <img
-                  src={profileImage}
-                  alt="Emma Watson"
-                  className="h-[320px] w-[320px] rounded-full object-cover sm:h-[380px] sm:w-[380px] lg:h-[420px] lg:w-[420px]"
-                />
-              </div>
-            </div>
-          </motion.div>
+          {/* ── Image Column ─────────────────────────────── */}
+          <div className="order-1 flex w-full justify-center lg:order-2 lg:w-auto lg:justify-end">
+            <ProfileImage />
+          </div>
         </div>
+      </div>
+
+      {/* ── Scroll Indicator ──────────────────────────────── */}
+      <motion.div
+        initial={{ opacity: 0 }}
+        animate={{ opacity: 1 }}
+        transition={{ delay: 1.5, duration: 0.8 }}
+        className="absolute inset-x-0 bottom-8 z-10 flex justify-center"
+      >
+        <a
+          href="/#about"
+          aria-label="Scroll down to About section"
+          className="scroll-indicator flex flex-col items-center gap-2 text-white/30 transition-colors duration-300 hover:text-purple-400"
+        >
+          <span className="text-xs font-medium tracking-widest uppercase">
+            Scroll
+          </span>
+          <div className="flex h-10 w-6 items-start justify-center rounded-full border border-white/20 p-1.5">
+            <motion.div
+              animate={{ y: [0, 12, 0] }}
+              transition={{
+                duration: 1.8,
+                repeat: Infinity,
+                ease: "easeInOut",
+              }}
+              className="h-1.5 w-1.5 rounded-full bg-purple-400"
+            />
+          </div>
+        </a>
       </motion.div>
     </section>
   );
