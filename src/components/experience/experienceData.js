@@ -1,0 +1,55 @@
+export const experienceData = [
+  {
+    title: "Software Engineer",
+    company: "WorkVEU",
+    duration: "Apr 2025 – Present",
+    bullets: [
+      "Developed cloud-based Real Estate CRM with React.js & Node.js",
+      "Built scalable REST APIs and microservices architecture",
+      "Implemented RBAC authentication and secure access control",
+      "Optimized MongoDB & PostgreSQL for high-performance queries",
+      "Collaborated in Agile teams delivering reliable software",
+    ],
+    technologies: [
+      "React.js",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "PostgreSQL",
+      "TypeScript",
+      "AWS",
+    ],
+  },
+  {
+    title: "Software Engineer",
+    company: "Klocrix Business Solutions",
+    duration: "Oct 2024 – Mar 2025",
+    bullets: [
+      "Developed full-stack web apps for multiple client projects",
+      "Improved application performance and frontend responsiveness",
+      "Built scalable REST APIs with Node.js and Express.js",
+      "Optimized database queries across MongoDB & PostgreSQL",
+      "Gained hands-on experience with AWS (EC2, S3, SES)",
+    ],
+    technologies: [
+      "React.js",
+      "Node.js",
+      "Express.js",
+      "MongoDB",
+      "PostgreSQL",
+      "TypeScript",
+      "AWS",
+    ],
+  },
+  {
+    title: "Bachelor of Computer Applications (BCA)",
+    company: "Education",
+    duration: "2021 – 2024",
+    bullets: [
+      "Built strong foundation in computer science fundamentals",
+      "Mastered data structures, algorithms, and database design",
+      "Completed multiple full-stack projects using MERN stack",
+      "Explored software development methodologies and best practices",
+    ],
+  },
+];
