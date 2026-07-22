@@ -19,9 +19,9 @@ const Hero = () => {
       <div className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_60%_50%_at_80%_100%,rgba(139,92,246,.12),transparent_60%)]" />
 
       {/* Floating blurred blobs */}
-      <div className="pointer-events-none absolute top-[15%] left-[10%] h-[400px] w-[400px] rounded-full bg-purple-600/8 blur-[120px]" />
-      <div className="pointer-events-none absolute right-[5%] bottom-[20%] h-[350px] w-[350px] rounded-full bg-violet-500/6 blur-[100px]" />
-      <div className="pointer-events-none absolute top-[60%] left-[50%] h-[300px] w-[300px] -translate-x-1/2 rounded-full bg-pink-500/5 blur-[110px]" />
+      <div className="pointer-events-none absolute top-[15%] left-[5%] h-[220px] w-[220px] rounded-full bg-purple-600/8 blur-[80px] sm:left-[10%] sm:h-[400px] sm:w-[400px] sm:blur-[120px]" />
+      <div className="pointer-events-none absolute right-[5%] bottom-[20%] h-[200px] w-[200px] rounded-full bg-violet-500/6 blur-[80px] sm:h-[350px] sm:w-[350px] sm:blur-[100px]" />
+      <div className="pointer-events-none absolute top-[60%] left-[50%] h-[200px] w-[200px] -translate-x-1/2 rounded-full bg-pink-500/5 blur-[80px] sm:h-[300px] sm:w-[300px] sm:blur-[110px]" />
 
       {/* Subtle grid pattern */}
       <div className="hero-bg-grid pointer-events-none absolute inset-0" />
@@ -34,8 +34,8 @@ const Hero = () => {
         <div className="mx-auto flex w-full max-w-7xl flex-col items-center gap-12 lg:flex-row lg:items-center lg:gap-20">
           {/* ── Text Column ──────────────────────────────── */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
-            animate={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8, ease: "easeOut", delay: 0.1 }}
             className="order-2 w-full max-w-2xl text-center lg:order-1 lg:text-left"
           >

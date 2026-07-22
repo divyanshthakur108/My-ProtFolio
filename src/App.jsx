@@ -3,10 +3,12 @@ import "./index.css";
 
 import NavBar from "./components/NavBar";
 import Home from "./pages/Home";
+import CustomCursor from "./components/CustomCursor";
 
 function App() {
   return (
     <>
+      <CustomCursor />
       <NavBar />
 
       <Routes>

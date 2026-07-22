@@ -21,9 +21,9 @@ const Experience = () => {
         aria-hidden="true"
       >
         <div
-          className="absolute left-[10%] top-1/2 h-[700px] w-[700px] -translate-y-1/2
+          className="absolute left-1/2 top-1/2 h-[260px] w-[260px] -translate-x-1/2 -translate-y-1/2
             rounded-full bg-purple-600/[0.04]
-            blur-[120px] sm:left-[15%]"
+            blur-[80px] sm:left-[15%] sm:h-[700px] sm:w-[700px] sm:translate-x-0 sm:blur-[120px]"
         />
       </div>
 

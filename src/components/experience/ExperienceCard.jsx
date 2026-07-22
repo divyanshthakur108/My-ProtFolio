@@ -51,8 +51,8 @@ const ExperienceCard = ({ item, index }) => {
         {item.bullets.map((bullet, i) => (
           <motion.li
             key={i}
-            initial={{ opacity: 0, x: -10 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 10 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true }}
             transition={{ duration: 0.35, delay: index * 0.1 + i * 0.06 }}
             className="flex items-start gap-3 text-sm leading-relaxed text-white/70 sm:text-[15px]"

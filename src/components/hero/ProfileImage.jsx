@@ -10,9 +10,9 @@ const ProfileImage = () => {
       aria-hidden="true"
     >
       {/* Background glow blobs */}
-      <div className="absolute -top-16 -left-16 h-72 w-72 rounded-full bg-purple-600/20 blur-[100px] sm:h-80 sm:w-80" />
-      <div className="absolute -right-12 -bottom-12 h-64 w-64 rounded-full bg-pink-500/15 blur-[90px] sm:h-72 sm:w-72" />
-      <div className="absolute top-1/2 left-1/2 h-56 w-56 -translate-x-1/2 -translate-y-1/2 rounded-full bg-violet-500/15 blur-[80px] sm:h-64 sm:w-64" />
+      <div className="absolute -top-6 -left-6 h-48 w-48 rounded-full bg-purple-600/20 blur-[60px] sm:-top-16 sm:-left-16 sm:h-80 sm:w-80 sm:blur-[100px]" />
+      <div className="absolute -right-6 -bottom-6 h-48 w-48 rounded-full bg-pink-500/15 blur-[60px] sm:-right-12 sm:-bottom-12 sm:h-72 sm:w-72 sm:blur-[90px]" />
+      <div className="absolute top-1/2 left-1/2 h-44 w-44 -translate-x-1/2 -translate-y-1/2 rounded-full bg-violet-500/15 blur-[50px] sm:h-64 sm:w-64 sm:blur-[80px]" />
 
       {/* Floating container */}
       <div className="profile-float relative">

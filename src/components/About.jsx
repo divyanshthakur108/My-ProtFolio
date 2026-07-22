@@ -44,7 +44,7 @@ const About = () => {
       className="relative w-full max-w-full overflow-hidden bg-dark-100 px-4 py-16 sm:px-8 sm:py-28 lg:px-10"
     >
       {/* Background accent glow */}
-      <div className="pointer-events-none absolute top-0 left-1/2 h-[500px] w-[700px] -translate-x-1/2 rounded-full bg-purple-600/6 blur-[140px]" />
+      <div className="pointer-events-none absolute top-0 left-1/2 h-[260px] w-[260px] -translate-x-1/2 rounded-full bg-purple-600/6 blur-[80px] sm:h-[500px] sm:w-[700px] sm:blur-[140px]" />
 
       <div className="relative mx-auto max-w-[1200px]">
         {/* ── Section Header ───────────────────────────── */}
@@ -70,8 +70,8 @@ const About = () => {
         <div className="flex flex-col gap-14 lg:flex-row lg:items-start lg:gap-16">
           {/* ── Left: My Journey ──────────────────────── */}
           <motion.div
-            initial={{ opacity: 0, x: -40 }}
-            whileInView={{ opacity: 1, x: 0 }}
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: true, amount: 0.2 }}
             transition={{ duration: 0.7, ease: "easeOut" }}
             className="w-full lg:w-1/2"
