@@ -8,14 +8,14 @@ import Contact from "../components/Contact";
 
 const Home = () => {
   return (
-  <div>
-    <Hero />
-    <About />
-    <Skills />
-    <Projects />
-    <Experience />
-    <Contact />
-  </div>
+    <main className="w-full max-w-full overflow-x-hidden">
+      <Hero />
+      <About />
+      <Skills />
+      <Projects />
+      <Experience />
+      <Contact />
+    </main>
   );
 };
 

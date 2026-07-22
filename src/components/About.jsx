@@ -41,7 +41,7 @@ const About = () => {
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, amount: 0.15 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      className="relative w-full overflow-hidden bg-dark-100 px-6 py-28 sm:px-8 lg:px-10"
+      className="relative w-full max-w-full overflow-hidden bg-dark-100 px-4 py-16 sm:px-8 sm:py-28 lg:px-10"
     >
       {/* Background accent glow */}
       <div className="pointer-events-none absolute top-0 left-1/2 h-[500px] w-[700px] -translate-x-1/2 rounded-full bg-purple-600/6 blur-[140px]" />
@@ -53,15 +53,15 @@ const About = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.3 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="mb-16 text-center"
+          className="mb-12 text-center sm:mb-16"
         >
-          <h2 className="text-4xl font-bold tracking-tight sm:text-5xl">
+          <h2 className="text-3xl font-bold tracking-tight sm:text-5xl">
             <span className="text-white">About </span>
             <span className="bg-gradient-to-r from-purple-400 to-violet-500 bg-clip-text text-transparent">
               Me
             </span>
           </h2>
-          <p className="mt-4 text-base text-white/50 sm:text-lg">
+          <p className="mt-3 text-sm text-white/50 sm:mt-4 sm:text-lg">
             Get to know more about my background and passion.
           </p>
         </motion.div>

@@ -13,11 +13,11 @@ const Experience = () => {
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, amount: 0.1 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      className="relative w-full overflow-hidden bg-dark-100 px-4 py-24 sm:px-6 lg:px-8"
+      className="relative w-full max-w-full overflow-hidden bg-dark-100 px-4 py-16 sm:px-6 sm:py-24 lg:px-8"
     >
       {/* ── Subtle purple radial glow behind the timeline ── */}
       <div
-        className="pointer-events-none absolute left-0 top-0 h-full w-full"
+        className="pointer-events-none absolute left-0 top-0 h-full w-full overflow-hidden"
         aria-hidden="true"
       >
         <div
@@ -34,28 +34,28 @@ const Experience = () => {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.6, ease: "easeOut" }}
-          className="mb-16 text-center"
+          className="mb-12 text-center sm:mb-16"
         >
-          <div className="mx-auto inline-flex items-center rounded-full bg-white/5 px-4 py-2 text-sm text-white/80">
+          <div className="mx-auto inline-flex items-center rounded-full bg-white/5 px-4 py-2 text-xs text-white/80 sm:text-sm">
             <FaBriefcase className="mr-2 text-purple-500" />
             Work Experience
           </div>
-          <h2 className="mt-6 text-4xl font-bold tracking-tight text-white sm:text-5xl">
+          <h2 className="mt-4 text-3xl font-bold tracking-tight text-white sm:mt-6 sm:text-5xl">
             <span className="text-white">Work</span>{" "}
             <span className="text-purple-500">Experience</span>
           </h2>
-          <p className="mt-4 text-base text-white/70 sm:text-lg">
+          <p className="mt-3 text-sm text-white/70 sm:mt-4 sm:text-lg">
             My professional journey so far
           </p>
         </motion.div>
 
         {/* ── Timeline + Cards Grid ── */}
-        <div className="grid grid-cols-[48px_1fr] gap-x-6 sm:grid-cols-[60px_1fr] sm:gap-x-10">
+        <div className="grid grid-cols-[36px_1fr] gap-x-3 sm:grid-cols-[60px_1fr] sm:gap-x-10">
           {/* Timeline column */}
           <Timeline itemCount={experienceData.length} />
 
           {/* Cards column */}
-          <div className="flex flex-col gap-14 sm:gap-16">
+          <div className="flex flex-col gap-10 sm:gap-16">
             {experienceData.map((item, index) => (
               <ExperienceCard key={item.company} item={item} index={index} />
             ))}

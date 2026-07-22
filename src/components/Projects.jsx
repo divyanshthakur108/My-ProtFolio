@@ -73,7 +73,7 @@ const Projects = () => {
       whileInView={{ opacity: 1 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      className="w-full bg-[#1a1a1a] px-6 py-24 sm:px-8"
+      className="w-full max-w-full overflow-hidden bg-[#1a1a1a] px-4 py-16 sm:px-8 sm:py-24"
     >
       <div className="mx-auto max-w-7xl">
         <motion.div
@@ -83,11 +83,11 @@ const Projects = () => {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="mb-12 text-center"
         >
-          <h2 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
+          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-5xl">
             <span className="text-white">My</span>{" "}
             <span className="text-purple-500">Projects</span>
           </h2>
-          <p className="mt-4 text-base text-white/70 sm:text-lg">
+          <p className="mt-3 text-sm text-white/70 sm:mt-4 sm:text-lg">
             A selection of my recent work
           </p>
         </motion.div>
@@ -96,7 +96,7 @@ const Projects = () => {
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
-          className="grid gap-8 sm:grid-cols-2 xl:grid-cols-3"
+          className="grid gap-6 sm:grid-cols-2 sm:gap-8 xl:grid-cols-3"
         >
           {projectData.map((project, index) => (
             <motion.article
@@ -116,35 +116,35 @@ const Projects = () => {
                 <img
                   src={project.image}
                   alt={project.title}
-                  className="h-[240px] w-full object-cover transition duration-300 hover:scale-105"
+                  className="h-[200px] w-full object-cover transition duration-300 hover:scale-105 sm:h-[240px]"
                 />
               </div>
 
-              <div className="p-8">
-                <h3 className="text-2xl font-semibold text-white">
+              <div className="p-6 sm:p-8">
+                <h3 className="text-xl font-semibold text-white sm:text-2xl">
                   {project.title}
                 </h3>
-                <p className="mt-4 text-base leading-7 text-white/70">
+                <p className="mt-3 text-sm leading-6 text-white/70 sm:mt-4 sm:text-base sm:leading-7">
                   {project.description}
                 </p>
 
-                <div className="mt-6 flex flex-wrap gap-3">
+                <div className="mt-5 flex flex-wrap gap-2 sm:mt-6 sm:gap-3">
                   {project.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="rounded-full bg-[#1f1f1f] px-4 py-2 text-sm font-medium text-white transition duration-300 hover:scale-105 hover:bg-purple-500"
+                      className="rounded-full bg-[#1f1f1f] px-3 py-1.5 text-xs font-medium text-white transition duration-300 hover:scale-105 hover:bg-purple-500 sm:px-4 sm:py-2 sm:text-sm"
                     >
                       {tag}
                     </span>
                   ))}
                 </div>
 
-                <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+                <div className="mt-6 flex flex-col gap-3 sm:mt-8 sm:flex-row">
                   <a
                     href={project.liveUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center justify-center rounded-xl bg-purple-500 px-6 py-3 text-sm font-semibold text-white transition duration-300 hover:scale-[1.02] hover:bg-purple-600"
+                    className="inline-flex w-full items-center justify-center rounded-xl bg-purple-500 px-5 py-3 text-sm font-semibold text-white transition duration-300 hover:scale-[1.02] hover:bg-purple-600 sm:w-auto sm:px-6"
                   >
                     <FaExternalLinkAlt className="mr-2" />
                     Live Demo
@@ -153,7 +153,7 @@ const Projects = () => {
                     href={project.githubUrl}
                     target="_blank"
                     rel="noreferrer"
-                    className="inline-flex items-center justify-center rounded-xl border border-purple-500 bg-transparent px-6 py-3 text-sm font-semibold text-white transition duration-300 hover:scale-[1.02] hover:bg-purple-500 hover:text-white"
+                    className="inline-flex w-full items-center justify-center rounded-xl border border-purple-500 bg-transparent px-5 py-3 text-sm font-semibold text-white transition duration-300 hover:scale-[1.02] hover:bg-purple-500 hover:text-white sm:w-auto sm:px-6"
                   >
                     <FaGithub className="mr-2" />
                     GitHub

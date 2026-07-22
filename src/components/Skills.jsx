@@ -58,7 +58,7 @@ const Skills = () => {
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true, amount: 0.2 }}
       transition={{ duration: 0.8, ease: "easeOut" }}
-      className="w-full bg-[#1a1a1a] px-6 py-24 sm:px-8"
+      className="w-full max-w-full overflow-hidden bg-[#1a1a1a] px-4 py-16 sm:px-8 sm:py-24"
     >
       <div className="mx-auto max-w-6xl">
         <motion.div
@@ -68,11 +68,11 @@ const Skills = () => {
           transition={{ duration: 0.6, ease: "easeOut" }}
           className="mb-12 text-center"
         >
-          <h2 className="text-4xl font-bold tracking-tight text-white sm:text-5xl">
+          <h2 className="text-3xl font-bold tracking-tight text-white sm:text-5xl">
             <span className="text-white">My</span>{" "}
             <span className="text-purple-500">Skills</span>
           </h2>
-          <p className="mt-4 text-base text-white/70 sm:text-lg">
+          <p className="mt-3 text-sm text-white/70 sm:mt-4 sm:text-lg">
             Technologies I work with to bring ideas to life
           </p>
         </motion.div>
@@ -82,7 +82,7 @@ const Skills = () => {
           whileInView="visible"
           viewport={{ once: true, amount: 0.2 }}
           transition={{ staggerChildren: 0.1 }}
-          className="grid gap-8 sm:grid-cols-2 xl:grid-cols-3"
+          className="grid gap-6 sm:grid-cols-2 sm:gap-8 xl:grid-cols-3"
         >
           {skillCards.map((card, index) => {
             const Icon = card.icon;
@@ -98,22 +98,22 @@ const Skills = () => {
                   delay: index * 0.08,
                 }}
                 whileHover={{ y: -10 }}
-                className="rounded-3xl bg-[#2a2a2a] p-8 shadow-xl shadow-black/30 transition duration-300 ease-out hover:border hover:border-purple-500 hover:shadow-purple-500/30"
+                className="rounded-3xl bg-[#2a2a2a] p-6 shadow-xl shadow-black/30 transition duration-300 ease-out hover:border hover:border-purple-500 hover:shadow-purple-500/30 sm:p-8"
               >
-                <div className="inline-flex h-16 w-16 items-center justify-center rounded-3xl bg-purple-500/10 text-purple-400">
-                  <Icon size={28} />
+                <div className="inline-flex h-14 w-14 items-center justify-center rounded-2xl bg-purple-500/10 text-purple-400 sm:h-16 sm:w-16 sm:rounded-3xl">
+                  <Icon size={26} />
                 </div>
-                <h3 className="mt-6 text-2xl font-semibold text-white">
+                <h3 className="mt-5 text-xl font-semibold text-white sm:mt-6 sm:text-2xl">
                   {card.title}
                 </h3>
-                <p className="mt-4 text-base text-white/70 leading-7">
+                <p className="mt-3 text-sm leading-6 text-white/70 sm:mt-4 sm:text-base sm:leading-7">
                   {card.description}
                 </p>
-                <div className="mt-6 flex flex-wrap gap-3">
+                <div className="mt-5 flex flex-wrap gap-2 sm:mt-6 sm:gap-3">
                   {card.tags.map((tag) => (
                     <span
                       key={tag}
-                      className="rounded-full bg-[#1f1f1f] px-4 py-2 text-sm font-medium text-white/80 transition duration-300 hover:scale-105 hover:border hover:border-purple-500"
+                      className="rounded-full bg-[#1f1f1f] px-3 py-1.5 text-xs font-medium text-white/80 transition duration-300 hover:scale-105 hover:border hover:border-purple-500 sm:px-4 sm:py-2 sm:text-sm"
                     >
                       {tag}
                     </span>

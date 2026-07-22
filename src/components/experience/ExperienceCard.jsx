@@ -19,7 +19,7 @@ const ExperienceCard = ({ item, index }) => {
       className="group relative rounded-3xl
         border border-white/[0.06]
         bg-[rgba(30,30,30,0.8)] backdrop-blur-xl
-        p-7 sm:p-8
+        p-5 sm:p-8
         shadow-[0_16px_48px_rgba(0,0,0,0.4)]
         transition-all duration-400
         hover:border-purple-500/30

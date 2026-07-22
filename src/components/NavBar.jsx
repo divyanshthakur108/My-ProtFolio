@@ -18,14 +18,14 @@ const NavBar = () => {
       <div className="mx-auto flex max-w-7xl items-center justify-between px-4 py-4 sm:px-6 lg:px-8">
         <a
           href="/#home"
-          className="flex items-center gap-3"
+          className="flex items-center gap-2 sm:gap-3"
           onClick={() => setIsOpen(false)}
         >
-          <h1 className="text-2xl font-bold leading-none whitespace-nowrap sm:text-3xl lg:text-4xl">
+          <h1 className="text-xl font-bold leading-none whitespace-nowrap sm:text-3xl lg:text-4xl">
             <span className="text-white">Divyansh</span>
-            <span className="ml-2 text-purple">Thakur</span>
+            <span className="ml-1.5 text-purple sm:ml-2">Thakur</span>
           </h1>
-          <span className="h-3 w-3 rounded-full bg-purple sm:h-4 sm:w-4"></span>
+          <span className="h-2.5 w-2.5 rounded-full bg-purple sm:h-4 sm:w-4"></span>
         </a>
 
         <div className="hidden items-center gap-8 md:flex">

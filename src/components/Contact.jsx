@@ -83,8 +83,8 @@ export default function Contact() {
   } = useContactForm();
 
   return (
-    <section id="contact" className="w-full bg-dark-100 py-25">
-      <div className="mx-auto max-w-7xl px-6">
+    <section id="contact" className="w-full max-w-full overflow-hidden bg-dark-100 py-16 sm:py-25">
+      <div className="mx-auto max-w-7xl px-4 sm:px-6">
         {/* ── Section Header ── */}
         <motion.div
           initial={{ opacity: 0, y: -30 }}
@@ -93,11 +93,11 @@ export default function Contact() {
           transition={{ duration: 0.7 }}
           className="mx-auto max-w-3xl text-center"
         >
-          <h2 className="text-4xl font-bold tracking-tight sm:text-5xl">
+          <h2 className="text-3xl font-bold tracking-tight sm:text-5xl">
             <span className="text-white">Get In</span>{" "}
             <span className="text-[#8B5CF6]">Touch</span>
           </h2>
-          <p className="mt-4 text-base text-gray-300 sm:text-lg">
+          <p className="mt-3 text-sm text-gray-300 sm:mt-4 sm:text-lg">
             Have a project in mind or want to collaborate? Let&apos;s talk!
           </p>
         </motion.div>
@@ -108,7 +108,7 @@ export default function Contact() {
           whileInView={{ opacity: 1, y: 0 }}
           viewport={{ once: true, amount: 0.2 }}
           transition={{ duration: 0.8 }}
-          className="mt-16 grid gap-10 lg:grid-cols-[3fr_2fr]"
+          className="mt-12 grid gap-8 sm:mt-16 lg:grid-cols-[3fr_2fr] lg:gap-10"
         >
           {/* ── Contact Form ── */}
           <motion.form
@@ -117,8 +117,8 @@ export default function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8 }}
-            className="space-y-6 rounded-3xl border border-gray-800 bg-[#121212]
-              p-8 shadow-[0_24px_80px_rgba(0,0,0,0.35)]"
+            className="space-y-5 rounded-3xl border border-gray-800 bg-[#121212]
+              p-5 shadow-[0_24px_80px_rgba(0,0,0,0.35)] sm:space-y-6 sm:p-8"
             noValidate
           >
             {/* Honeypot field — hidden from real users, bots fill it */}
@@ -202,8 +202,8 @@ export default function Contact() {
             whileInView={{ opacity: 1, x: 0 }}
             viewport={{ once: true, amount: 0.3 }}
             transition={{ duration: 0.8 }}
-            className="space-y-8 rounded-3xl border border-gray-800 bg-[#121212]
-              p-8 shadow-[0_24px_80px_rgba(0,0,0,0.35)]"
+            className="space-y-6 rounded-3xl border border-gray-800 bg-[#121212]
+              p-5 shadow-[0_24px_80px_rgba(0,0,0,0.35)] sm:space-y-8 sm:p-8"
           >
             {/* Info cards */}
             <div className="space-y-6">
