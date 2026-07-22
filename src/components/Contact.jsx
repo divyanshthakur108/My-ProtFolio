@@ -23,7 +23,7 @@ const contactInfo = [
   {
     icon: FiMail,
     title: "Email",
-    description: "divyanshthakur@email.com",
+    description: "divyanshthakur327@gmail.com",
   },
   {
     icon: FiPhone,
