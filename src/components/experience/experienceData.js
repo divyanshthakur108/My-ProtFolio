@@ -44,7 +44,7 @@ export const experienceData = [
   {
     title: "Bachelor of Computer Applications (BCA)",
     company: "Education",
-    duration: "2021 – 2024",
+    duration: "2022 – 2025",
     bullets: [
       "Built strong foundation in computer science fundamentals",
       "Mastered data structures, algorithms, and database design",
